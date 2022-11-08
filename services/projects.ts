@@ -19,7 +19,7 @@ export async function addProject(project: Project) {
   };
 
   try {
-    const response = await axios.post(url, reqData, apiConfig.req);
+    const response = await axios.post(url, reqData);
     return response.data;
   } catch (e) {
     handleHttpError(e);

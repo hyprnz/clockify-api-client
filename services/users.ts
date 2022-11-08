@@ -12,7 +12,7 @@ interface ClockifyUser {
 export async function getUser() {
   const url = `${apiConfig.rootApiUrl}/user`;
   try {
-    const response: AxiosResponse<ClockifyUser> = await axios.get(url, apiConfig.req);
+    const response: AxiosResponse<ClockifyUser> = await axios.get(url);
     return response.data;
   } catch (e) {
     handleHttpError(e);
