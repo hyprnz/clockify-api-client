@@ -1,9 +1,8 @@
-import axios, { AxiosError } from "axios";
-
+import axios from "axios";
 import { apiConfig } from "../config/ApiConfig";
 import { handleHttpError } from "./common";
 
-export async function getSummaryReport(dateRangeStart: string, dateRangeEnd: string, filterGroups: [string]) {
+export async function getSummaryReport(dateRangeStart: string, dateRangeEnd: string, filterGroups: string[]) {
   const url = `${apiConfig.reportsApiUrl}/summary`;
   const reqData = {
     dateRangeStart,
@@ -14,7 +13,7 @@ export async function getSummaryReport(dateRangeStart: string, dateRangeEnd: str
   };
 
   try {
-    const response = await axios.post(url, reqData, apiConfig.req);
+    const response = await axios.post(url, reqData);
     return response.data;
   } catch (e) {
     handleHttpError(e);
@@ -34,7 +33,7 @@ export async function getDetailedReport(dateRangeStart: string, dateRangeEnd: st
   };
 
   try {
-    const response = await axios.post(url, reqData, apiConfig.req);
+    const response = await axios.post(url, reqData);
     return response.data;
   } catch (e) {
     handleHttpError(e);

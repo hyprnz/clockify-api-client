@@ -10,7 +10,7 @@ export async function addClients(clients: string[]) {
     const reqData = { name: client };
 
     try {
-      const response = await axios.post(url, reqData, apiConfig.req);
+      const response = await axios.post(url, reqData);
       return response.data;
     } catch (e) {
       handleHttpError(e);
@@ -22,7 +22,7 @@ export async function getClients() {
   const url = `${apiConfig.commonApiUrl}/clients?archived=false`;
 
   try {
-    const response = await axios.get(url, apiConfig.req);
+    const response = await axios.get(url);
     return response.data;
   } catch (e) {
     handleHttpError(e);
