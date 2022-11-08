@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import { apiConfig } from "../config/ApiConfig";
+import { handleHttpError } from "./common";
 
 interface Project {
   name: string;
@@ -18,8 +19,9 @@ export async function addProject(project: Project) {
   };
 
   try {
-    await axios.post(url, reqData, apiConfig.req);
+    const response = await axios.post(url, reqData, apiConfig.req);
+    return response.data;
   } catch (e) {
-    console.error("Ahhhhh!", e);
+    handleHttpError(e);
   }
 }
