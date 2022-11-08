@@ -1,3 +1,5 @@
+[![Test status](https://github.com/hyprnz/clockify-api-client/actions/workflows/build-test.yaml/badge.svg?branch=main)](https://github.com/hyprnz/clockify-api-client/actions/workflows/build-test.yaml)
+
 # Clockify API Client CLI
 
 This is a CLI tool used to work with the Clockify API.
