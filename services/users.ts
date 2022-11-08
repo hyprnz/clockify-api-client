@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-import { ApiConfig } from "./ApiConfig";
+import { ApiConfig } from "../config/ApiConfig";
 
 interface ClockifyUser { id: string, name: string, defaultWorkspace: string }
 

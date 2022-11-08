@@ -1,5 +1,7 @@
-const workspaceId = "62f2e35cb231d8663504739d"; // HyprActive Mock
-// const workspaceId = "605a5bfe2ee8a33c7713614d"; // HYPR Innovation
+const hypractiveMockWorkspaceId = "62f2e35cb231d8663504739d"; // HyprActive Mock
+const hyprInnovationWorkspaceId = "605a5bfe2ee8a33c7713614d"; // HYPR Innovation
+
+const workspaceId = process.env.WORKSPACE_ID || hypractiveMockWorkspaceId;
 
 const rootApiUrl = `https://api.clockify.me/api/v1`;
 
