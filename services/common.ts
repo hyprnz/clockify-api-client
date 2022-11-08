@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import log from "../config/Logger";
+import log from "../config/logger";
 
 export function handleHttpError(err: any) {
   if (err instanceof AxiosError) {
