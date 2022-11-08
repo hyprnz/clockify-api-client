@@ -1,4 +1,4 @@
-[![Test status](https://github.com/hyprnz/clockify-api-client/actions/workflows/build-test.yaml/badge.svg?branch=main)](https://github.com/hyprnz/clockify-api-client/actions/workflows/build-test.yaml)
+[![Build-test](https://github.com/hyprnz/clockify-api-client/actions/workflows/build-test.yaml/badge.svg)](https://github.com/hyprnz/clockify-api-client/actions/workflows/build-test.yaml)
 
 # Clockify API Client CLI
 
