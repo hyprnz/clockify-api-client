@@ -2,39 +2,39 @@ import axios from "axios";
 
 import { apiConfig } from "../config/ApiConfig";
 
-export async function getSummaryReport() {
+export async function getSummaryReport(dateRangeStart: string, dateRangeEnd: string, filterGroups: [string]) {
   const url = `${apiConfig.reportsApiUrl}/summary`;
   const reqData = {
-    dateRangeStart: "2022-08-08T00:00:00.000",
-    dateRangeEnd: "2022-08-28T00:00:00.000",
+    dateRangeStart,
+    dateRangeEnd,
     summaryFilter: {
-      groups: ["CLIENT", "PROJECT", "USER"]
+      groups: filterGroups
     }
   };
 
   try {
     const response = await axios.post(url, reqData, apiConfig.req);
-    // console.log(JSON.stringify(response));
+    return response.data;
   } catch (e) {
     console.error("Ahhhhh!", e);
   }
 }
 
-export async function getDetailedReport() {
+export async function getDetailedReport(dateRangeStart: string, dateRangeEnd: string, page: number, pageSize: number) {
   const url = `${apiConfig.reportsApiUrl}/detailed`;
   const reqData = {
-    dateRangeStart: "2022-08-08T00:00:00.000",
-    dateRangeEnd: "2022-08-28T00:00:00.000",
+    dateRangeStart,
+    dateRangeEnd,
     detailedFilter: {
-      page: 1,
-      pageSize: 10
+      page,
+      pageSize
     },
     exportType: "JSON"
   };
 
   try {
     const response = await axios.post(url, reqData, apiConfig.req);
-    console.log(JSON.stringify(response.data));
+    return response.data;
   } catch (e) {
     console.error("Ahhhhh!", e);
   }

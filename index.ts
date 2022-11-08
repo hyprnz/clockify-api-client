@@ -2,11 +2,14 @@ import { getUser } from "./services/users";
 import { getSummaryReport, getDetailedReport } from "./services/reports";
 import { addClients, showClients } from "./services/clients";
 import { addProject } from "./services/projects";
+import { parseCliArgs } from "./cli";
+
+parseCliArgs();
 
 // getUser();
 
 // getSummaryReport();
-getDetailedReport();
+//getDetailedReport();
 
 // Best to do them 10 per call to avoid being rate limited
 // const newClientNames = ["Foo", "Bar", "Baz"];
