@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { ApiConfig } from "./ApiConfig";
+import { ApiConfig } from "../config/ApiConfig";
 
 interface Project {
   name: string,

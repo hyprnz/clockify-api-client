@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { ApiConfig } from "./ApiConfig";
+import { ApiConfig } from "../config/ApiConfig";
 
 export async function addClients(config: ApiConfig, clients: string[]) {
   const url = `${config.commonApiUrl}/clients`;
