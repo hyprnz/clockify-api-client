@@ -5,7 +5,7 @@ import { apiConfig } from "../config/ApiConfig";
 export async function addClients(clients: string[]) {
   const url = `${apiConfig.commonApiUrl}/clients`;
 
-  clients.forEach(async client => {
+  clients.forEach(async (client) => {
     const reqData = { name: client };
 
     try {

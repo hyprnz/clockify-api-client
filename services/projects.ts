@@ -3,9 +3,9 @@ import axios from "axios";
 import { apiConfig } from "../config/ApiConfig";
 
 interface Project {
-  name: string,
-  clientId: string,
-  isBillable: boolean,
+  name: string;
+  clientId: string;
+  isBillable: boolean;
 }
 
 export async function addProject(project: Project) {
@@ -14,7 +14,7 @@ export async function addProject(project: Project) {
   const reqData = {
     name: project.name,
     clientId: project.clientId,
-    billable: project.isBillable,
+    billable: project.isBillable
   };
 
   try {
@@ -23,4 +23,3 @@ export async function addProject(project: Project) {
     console.error("Ahhhhh!", e);
   }
 }
-

@@ -9,12 +9,12 @@ const workspaceId = process.env.WORKSPACE_ID || hypractiveMockWorkspaceId;
 const rootApiUrl = `https://api.clockify.me/api/v1`;
 
 export interface ApiConfig {
-  rootApiUrl: string,
-  commonApiUrl: string,
-  reportsApiUrl: string,
+  rootApiUrl: string;
+  commonApiUrl: string;
+  reportsApiUrl: string;
   req: {
-    headers: { "X-Api-Key": string, "Content-Type": string }
-  }
+    headers: { "X-Api-Key": string; "Content-Type": string };
+  };
 }
 
 export const apiConfig = {
@@ -24,7 +24,7 @@ export const apiConfig = {
   req: {
     headers: {
       "X-Api-Key": process.env.API_KEY || "",
-      "Content-Type": "application/json",
-    },
-  },
+      "Content-Type": "application/json"
+    }
+  }
 };

@@ -1,5 +1,3 @@
-const { program } = require('commander');
-
 import { getUser } from "./services/users";
 import { getSummaryReport, getDetailedReport } from "./services/reports";
 import { addClients, showClients } from "./services/clients";
@@ -19,5 +17,5 @@ const project = {
   name: "Project Foo",
   clientId: "62f57948ee5e075289365ec0", // Contour
   isBillable: true
-}
+};
 //addProject(project);

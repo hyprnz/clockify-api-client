@@ -8,11 +8,7 @@ export async function getSummaryReport() {
     dateRangeStart: "2022-08-08T00:00:00.000",
     dateRangeEnd: "2022-08-28T00:00:00.000",
     summaryFilter: {
-      groups: [
-        "CLIENT",
-        "PROJECT",
-        "USER"
-      ]
+      groups: ["CLIENT", "PROJECT", "USER"]
     }
   };
 
@@ -30,8 +26,8 @@ export async function getDetailedReport() {
     dateRangeStart: "2022-08-08T00:00:00.000",
     dateRangeEnd: "2022-08-28T00:00:00.000",
     detailedFilter: {
-      "page": 1,
-      "pageSize": 10
+      page: 1,
+      pageSize: 10
     },
     exportType: "JSON"
   };
@@ -43,4 +39,3 @@ export async function getDetailedReport() {
     console.error("Ahhhhh!", e);
   }
 }
-

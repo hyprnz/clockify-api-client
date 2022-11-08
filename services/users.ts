@@ -2,7 +2,11 @@ import axios, { AxiosResponse } from "axios";
 
 import { apiConfig } from "../config/ApiConfig";
 
-interface ClockifyUser { id: string, name: string, defaultWorkspace: string }
+interface ClockifyUser {
+  id: string;
+  name: string;
+  defaultWorkspace: string;
+}
 
 export async function getUser() {
   const url = `${apiConfig.rootApiUrl}/user`;
