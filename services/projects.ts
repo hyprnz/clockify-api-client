@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { ApiConfig } from "../config/ApiConfig";
+import { apiConfig } from "../config/ApiConfig";
 
 interface Project {
   name: string,
@@ -8,8 +8,8 @@ interface Project {
   isBillable: boolean,
 }
 
-export async function addProject(config: ApiConfig, project: Project) {
-  const url = `${config.commonApiUrl}/projects`;
+export async function addProject(project: Project) {
+  const url = `${apiConfig.commonApiUrl}/projects`;
 
   const reqData = {
     name: project.name,
@@ -18,7 +18,7 @@ export async function addProject(config: ApiConfig, project: Project) {
   };
 
   try {
-    await axios.post(url, reqData, config.req);
+    await axios.post(url, reqData, apiConfig.req);
   } catch (e) {
     console.error("Ahhhhh!", e);
   }

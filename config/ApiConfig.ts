@@ -1,3 +1,6 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 const hypractiveMockWorkspaceId = "62f2e35cb231d8663504739d"; // HyprActive Mock
 const hyprInnovationWorkspaceId = "605a5bfe2ee8a33c7713614d"; // HYPR Innovation
 
