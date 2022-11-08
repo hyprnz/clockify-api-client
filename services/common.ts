@@ -1,9 +1,10 @@
 import { AxiosError } from "axios";
+import log from "../config/Logger";
 
-export async function handleHttpError(err: any) {
+export function handleHttpError(err: any) {
   if (err instanceof AxiosError) {
-    console.error(`HTTP error: ${err.response?.status} ${err.response?.statusText}`);
-    console.error(`Message: ${err.message}`);
+    log.error(`HTTP error: ${err.response?.status} ${err.response?.statusText}`);
+    log.error(`Message: ${err.message}`);
   } else {
     throw err;
   }

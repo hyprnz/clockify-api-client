@@ -1,4 +1,5 @@
 import { Command, Option } from "commander";
+import log from "../config/Logger";
 
 export function configureOutputModes(cmd: Command) {
   cmd
@@ -22,9 +23,9 @@ export function outputData(options: OutputOptions, data: Object) {
   }
 
   if (!options.target) {
-    console.log(result);
+    log.info("\n" + result);
   } else {
-    console.log(`TODO - output to file at ${options.target}`);
+    log.warn(`TODO - output to file at ${options.target}`);
   }
 }
 
