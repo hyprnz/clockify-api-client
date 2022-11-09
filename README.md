@@ -52,3 +52,32 @@ Options:
   -h, --help                     display help for command
 
 ```
+
+
+## Development
+
+### Verifying s3 operations locally
+You can test the save-to-s3 operations locally with localstack:
+
+1. Assuming you have localstack running, start by creating a bucket:
+    ```
+    awslocal s3api create-bucket --bucket clockify-eg
+    ```
+1. Ensure your .env file is configured to use localstack:
+    ```.env
+    ...
+    LOCALSTACK_S3_ENDPOINT=http://localhost:4566
+    AWS_ACCESS_KEY_ID=local
+    AWS_SECRET_ACCESS_KEY=local
+    ...
+    ```
+1. Run a command to push some data into s3:
+    ```
+    npm start -- reports detail --pageSize 2 -t s3 -d clockify-eg -k dump.json
+    ```
+1. Verify the object was created, and that it contains the data you're expecting:
+    ```
+    awslocal s3api list-objects --bucket clockify-eg
+    awslocal s3api get-object --bucket clockify-eg --key dump.json out.json
+    cat out.json
+    ```

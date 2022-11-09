@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import { getDetailedReport, getSummaryReport } from "../services/reports";
-import { configureOutputModes, outputData, OutputOptions } from "./output-config";
+import { configureOutputModes, outputDataAsync, OutputOptions } from "./output-config";
 
 export function generateReportsCommand(program: Command) {
   const baseCommand = program.command("reports").description("Interact with clockify reporting data");
@@ -20,7 +20,7 @@ export function generateReportsCommand(program: Command) {
     .option("--filterGroups [filterGroups]", "The summary filter groups to use", ["CLIENT", "PROJECT", "USER"])
     .action(async (options: SummaryReportOptions) => {
       const result = await getSummaryReport(options.start, options.end, options.filterGroups);
-      outputData(options, result);
+      await outputDataAsync(options, result);
     });
 
   const detailCommand = baseCommand.command("detail").description("Fetch detailed report data");
@@ -32,7 +32,7 @@ export function generateReportsCommand(program: Command) {
     .option("--pageSize <pageSize>", "The number of items per page to fetch", "10")
     .action(async (options: DetailedReportOptions) => {
       const result = await getDetailedReport(options.start, options.end, options.page, options.pageSize);
-      outputData(options, result);
+      await outputDataAsync(options, result);
     });
 }
 
