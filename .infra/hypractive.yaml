@@ -1,0 +1,8 @@
+terraform_state_bucket: admin-terraform-state.hypr.nz
+terraform_state_bucket_region: ap-southeast-2
+
+# TODO - configure lambda defaults here - e.g.
+# alias_name: hypractive-clockify-api-client-latest
+# application_name: hypractive-clockify-api-client
+# service_target_group_name: "hypractive-clockify-api-client-target-group"
+# service_target_group_path: "hypractive-clockify-api-client-target-group-path"
